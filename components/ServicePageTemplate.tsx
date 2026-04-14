@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, Quote } from "lucide-react";
 
 import CTAButton from "@/components/CTAButton";
 import FAQItem from "@/components/FAQItem";
@@ -36,16 +38,57 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
       />
 
       <section className="section-space">
-        <div className="container-shell max-w-5xl space-y-5">
-          <SectionLabel>{service.keyword}</SectionLabel>
-          <h1 className="font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
-            {service.title}
-          </h1>
-          <p className="max-w-copy text-base leading-8 text-slate-200 sm:text-xl">{service.answer}</p>
-          <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">{service.problem}</p>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <CTAButton href={BOOKING_URL} label="Book Your Rebuild Call" external />
-            <CTAButton href="/" label="Return Home" variant="secondary" />
+        <div className="container-shell grid max-w-6xl gap-8 lg:grid-cols-[1fr_0.92fr] lg:items-center">
+          <div className="space-y-5">
+            <SectionLabel>{service.keyword}</SectionLabel>
+            <h1 className="font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
+              {service.title}
+            </h1>
+            <p className="max-w-copy text-base leading-8 text-slate-200 sm:text-xl">{service.answer}</p>
+            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">{service.problem}</p>
+            <div className="flex flex-wrap gap-3">
+              {service.editorialLabels.map((label) => (
+                <span
+                  key={label}
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <CTAButton href={BOOKING_URL} label="Book Your Rebuild Call" external />
+              <CTAButton href="/" label="Return Home" variant="secondary" />
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className={`absolute inset-0 rounded-[32px] bg-gradient-to-br ${service.accent} blur-2xl`} aria-hidden="true" />
+            <GlassCard className="relative overflow-hidden p-4">
+              <div className="grid gap-4">
+                <div className="overflow-hidden rounded-[26px] border border-white/10">
+                  <Image
+                    src={service.visualImage}
+                    alt={service.visualAlt}
+                    width={1200}
+                    height={1400}
+                    className="h-[420px] w-full object-cover object-top"
+                  />
+                </div>
+                <div className="grid gap-4 sm:grid-cols-[1.1fr_0.9fr]">
+                  <div className="rounded-[24px] border border-white/10 bg-black/25 p-5">
+                    <Quote className="h-5 w-5 text-electric-300" aria-hidden="true" />
+                    <p className="mt-4 text-base leading-8 text-slate-200">{service.pullQuote}</p>
+                  </div>
+                  <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">Best next move</p>
+                    <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">
+                      Bring the real bottleneck into the room and repair the right layer before more time gets spent on the wrong fix.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </GlassCard>
           </div>
         </div>
       </section>
@@ -125,9 +168,10 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
                   <Link
                     key={related.slug}
                     href={`/services/${related.slug}`}
-                    className="block rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 transition hover:bg-white/[0.08] sm:text-base"
+                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 transition hover:bg-white/[0.08] sm:text-base"
                   >
-                    {related.navTitle}
+                    <span>{related.navTitle}</span>
+                    <ArrowUpRight className="h-4 w-4 text-electric-300" aria-hidden="true" />
                   </Link>
                 ))}
               </div>

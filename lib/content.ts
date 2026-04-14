@@ -200,6 +200,11 @@ export type ServicePageContent = {
   description: string;
   answer: string;
   problem: string;
+  visualImage: string;
+  visualAlt: string;
+  accent: string;
+  pullQuote: string;
+  editorialLabels: string[];
   symptoms: string[];
   whatRickDoes: string[];
   whoItIsFor: string[];
@@ -220,6 +225,11 @@ export const servicePages: Record<string, ServicePageContent> = {
       "A digital transformation consultant helps you rebuild the operating structure beneath the business so your growth, delivery, offers, and digital pathways finally work together instead of fighting each other.",
     problem:
       "Most small businesses do not need more software. They need a cleaner structure, clearer sequencing, and a business model that can support the mission without constant drag.",
+    visualImage: "/rick/rick-city-blue.png",
+    visualAlt: "Rick Broider standing in a city setting",
+    accent: "from-electric-400/30 via-cyan-300/10 to-transparent",
+    pullQuote: "Growth stops feeling coherent when the digital layer keeps evolving without the structure underneath it.",
+    editorialLabels: ["Systems clarity", "Offer architecture", "Digital pathway repair"],
     symptoms: [
       "Your offers, systems, and delivery model no longer match the level of business you are trying to hold.",
       "The team is working hard, but growth still feels messy, expensive, or reactive.",
@@ -269,6 +279,11 @@ export const servicePages: Record<string, ServicePageContent> = {
       "A website development consultant should help you improve far more than visuals. The real work is clarifying what the site needs to say, how it should convert, and what structure supports trust.",
     problem:
       "Many websites fail because they are carrying outdated positioning, unclear pathways, scattered messaging, and design decisions that were never anchored to buyer psychology.",
+    visualImage: "/rick/rick-car-burgundy.png",
+    visualAlt: "Rick Broider portrait in a burgundy shirt",
+    accent: "from-amber-300/25 via-rose-300/10 to-transparent",
+    pullQuote: "A website should lower friction, raise trust, and help the right person feel oriented within seconds.",
+    editorialLabels: ["Messaging clarity", "Conversion structure", "Trust by design"],
     symptoms: [
       "The site looks acceptable, but it does not create conviction.",
       "You struggle to explain what you do quickly and clearly.",
@@ -318,6 +333,11 @@ export const servicePages: Record<string, ServicePageContent> = {
       "An MVP consultant helps you decide what should exist in version one, what should wait, and how to scope a practical product path before money disappears into the wrong build.",
     problem:
       "App ideas often collapse under premature development, vague scope, or technical decisions made before the product logic is mature enough to support them.",
+    visualImage: "/rick/rick-selfie-parking.jpg",
+    visualAlt: "Rick Broider taking a casual outdoor selfie",
+    accent: "from-indigo-400/30 via-electric-400/10 to-transparent",
+    pullQuote: "Before you build faster, you need the product path to become simpler, safer, and more honest.",
+    editorialLabels: ["Scope discipline", "Founder translation", "Build sequence"],
     symptoms: [
       "You have a strong concept, but no trustworthy sequencing.",
       "Developers are asking questions you are not equipped to answer yet.",
@@ -367,6 +387,11 @@ export const servicePages: Record<string, ServicePageContent> = {
       "An AI consultant for small business should help you decide where AI genuinely improves speed, clarity, or capacity and where it simply adds more noise to an already strained system.",
     problem:
       "Many businesses are being pushed toward AI before their offers, workflows, or customer experience are clear enough to benefit from it.",
+    visualImage: "/rick/rick-patio-charcoal.png",
+    visualAlt: "Rick Broider outdoors in a charcoal shirt",
+    accent: "from-cyan-300/25 via-indigo-400/10 to-transparent",
+    pullQuote: "The useful question is not whether AI is available. It is whether it serves clarity, capacity, and human trust.",
+    editorialLabels: ["Human-centered AI", "Practical leverage", "Noise reduction"],
     symptoms: [
       "You are experimenting with AI, but results feel fragmented or underwhelming.",
       "Teams are producing more output without stronger decisions.",
@@ -416,6 +441,11 @@ export const servicePages: Record<string, ServicePageContent> = {
       "Fractional CTO guidance for non-technical founders gives you senior technical judgment, sequencing, and architecture support without the cost or complexity of hiring a full-time CTO too early.",
     problem:
       "Technical decisions become expensive when non-technical founders are asked to scope, evaluate, and sequence product or platform work without a senior translator in the room.",
+    visualImage: "/rick/rick-portrait-garden.jpg",
+    visualAlt: "Rick Broider portrait in a garden setting",
+    accent: "from-sky-300/25 via-electric-400/10 to-transparent",
+    pullQuote: "Founders need a technical translator they can trust before product complexity starts choosing the roadmap for them.",
+    editorialLabels: ["Senior guidance", "Architecture judgment", "Founder-side support"],
     symptoms: [
       "You are relying on vendors or developers to define the roadmap for you.",
       "You cannot easily tell which build decisions matter now versus later.",

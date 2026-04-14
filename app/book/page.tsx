@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import CTAButton from "@/components/CTAButton";
 import GlassCard from "@/components/GlassCard";
 import SectionLabel from "@/components/SectionLabel";
@@ -16,14 +18,32 @@ export default function BookPage() {
   return (
     <>
       <section className="section-space">
-        <div className="container-shell max-w-5xl space-y-6">
-          <SectionLabel>Book</SectionLabel>
-          <h1 className="font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
-            Book Your Rebuild Call
-          </h1>
-          <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
-            This is a clean booking page for people who are ready for clarity. If the business feels heavier than it should, the call is where we slow the noise down, name the real pattern, and make the next move obvious.
-          </p>
+        <div className="container-shell grid max-w-6xl gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+          <div className="space-y-6">
+            <SectionLabel>Book</SectionLabel>
+            <h1 className="font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
+              Book Your Rebuild Call
+            </h1>
+            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+              This is a clean booking page for people who are ready for clarity. If the business feels heavier than it should, the call is where we slow the noise down, name the real pattern, and make the next move obvious.
+            </p>
+            <GlassCard className="p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">Come as you are</p>
+              <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">
+                Bring the mess, the fog, the half-built version, or the thing you cannot quite name yet. That is exactly what this call is for.
+              </p>
+            </GlassCard>
+          </div>
+
+          <GlassCard className="overflow-hidden">
+            <Image
+              src="/rick/rick-portrait-garden.jpg"
+              alt="Rick Broider portrait for booking page"
+              width={1200}
+              height={1600}
+              className="h-full w-full object-cover object-top"
+            />
+          </GlassCard>
         </div>
       </section>
 

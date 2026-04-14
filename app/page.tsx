@@ -109,6 +109,26 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+
+            <GlassCard className="p-4 sm:p-5">
+              <div className="flex items-center gap-4">
+                <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-white/10">
+                  <Image
+                    src="/rick/rick-portrait-garden.jpg"
+                    alt="Rick Broider portrait"
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">Live with you</p>
+                  <p className="mt-1 text-sm leading-7 text-slate-300 sm:text-base">
+                    Strategic diagnosis, human-centered tech guidance, and practical rebuilding with Rick in the room.
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
           </div>
 
           <PatternDiagnostic />
@@ -312,11 +332,11 @@ export default function HomePage() {
           <div className="space-y-4">
             <GlassCard className="overflow-hidden">
               <Image
-                src="/images/stc-top-7-002-dark.png"
-                alt="Dark abstract support image for structural business rebuilding"
+                src="/rick/rick-city-blue.png"
+                alt="Rick Broider in an urban setting"
                 width={1200}
                 height={800}
-                className="h-56 w-full object-cover"
+                className="h-72 w-full object-cover object-top"
               />
             </GlassCard>
             <div className="grid gap-4">

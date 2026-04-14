@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import CTAButton from "@/components/CTAButton";
 import GlassCard from "@/components/GlassCard";
 import SectionLabel from "@/components/SectionLabel";
@@ -47,14 +49,45 @@ export default function AboutPage() {
       />
 
       <section className="section-space">
-        <div className="container-shell max-w-5xl space-y-6">
-          <SectionLabel>About Rick Broider</SectionLabel>
-          <h1 className="balanced-copy font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
-            A premium rebuild model for people whose vision has outgrown the old structure.
-          </h1>
-          <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
-            Rick works live with visionaries who need more than analysis. He brings strategy, structural diagnosis, business architecture, website and app pathway guidance, and AI-assisted implementation together so the rebuild becomes real, not theoretical.
-          </p>
+        <div className="container-shell grid max-w-6xl gap-8 lg:grid-cols-[1fr_0.92fr] lg:items-center">
+          <div className="space-y-6">
+            <SectionLabel>About Rick Broider</SectionLabel>
+            <h1 className="balanced-copy font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
+              A premium rebuild model for people whose vision has outgrown the old structure.
+            </h1>
+            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+              Rick works live with visionaries who need more than analysis. He brings strategy, structural diagnosis, business architecture, website and app pathway guidance, and AI-assisted implementation together so the rebuild becomes real, not theoretical.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-[1.08fr_0.92fr]">
+            <GlassCard className="overflow-hidden">
+              <Image
+                src="/rick/rick-patio-charcoal.png"
+                alt="Rick Broider portrait outdoors"
+                width={1200}
+                height={1600}
+                className="h-full w-full object-cover object-top"
+              />
+            </GlassCard>
+            <div className="grid gap-4">
+              <GlassCard className="overflow-hidden">
+                <Image
+                  src="/rick/rick-car-burgundy.png"
+                  alt="Rick Broider portrait in a burgundy shirt"
+                  width={1200}
+                  height={1600}
+                  className="h-full w-full object-cover object-top"
+                />
+              </GlassCard>
+              <GlassCard className="p-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">How clients experience the work</p>
+                <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">
+                  Calm. Direct. Intelligent. Less posturing, less tech fog, and more real movement built with you in the room.
+                </p>
+              </GlassCard>
+            </div>
+          </div>
         </div>
       </section>
 
