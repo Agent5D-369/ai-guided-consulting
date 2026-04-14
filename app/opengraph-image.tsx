@@ -40,10 +40,9 @@ export default function OpenGraphImage() {
           Rick Broider
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 860 }}>
-          <div style={{ fontSize: 72, lineHeight: 1.02, fontWeight: 700 }}>
-            Your vision is not broken.
-            <br />
-            Your business architecture is.
+          <div style={{ display: "flex", flexDirection: "column", fontSize: 72, lineHeight: 1.02, fontWeight: 700 }}>
+            <span>Your vision is not broken.</span>
+            <span>Your business architecture is.</span>
           </div>
           <div style={{ fontSize: 30, lineHeight: 1.4, color: "rgba(255,255,255,0.82)" }}>
             Digital transformation consulting and live regenerative business rebuilds for founders and
