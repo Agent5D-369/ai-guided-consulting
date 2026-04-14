@@ -4,7 +4,6 @@ import Link from "next/link";
 import CTAButton from "@/components/CTAButton";
 import FAQItem from "@/components/FAQItem";
 import GlassCard from "@/components/GlassCard";
-import PatternDiagnostic from "@/components/PatternDiagnostic";
 import SectionLabel from "@/components/SectionLabel";
 import SharePrompt from "@/components/SharePrompt";
 import ServiceCard from "@/components/ServiceCard";
@@ -123,11 +122,11 @@ export default function HomePage() {
       <StructuredData data={[personSchema(), professionalServiceSchema(), faqSchema(homepageFaqs)]} />
 
       <section className="section-space overflow-hidden">
-        <div className="container-shell grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
-          <div className="space-y-8">
+        <div className="container-shell grid gap-10 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
+          <div className="space-y-7">
             <SectionLabel>Clarity to Prosperity</SectionLabel>
             <div className="space-y-6">
-              <h1 className="balanced-copy font-heading text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="max-w-[12ch] font-heading text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-[4.5rem] lg:leading-[0.94]">
                 Your vision is not broken.
                 <br />
                 Your business architecture is.
@@ -156,31 +155,23 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-
-            <GlassCard className="overflow-hidden p-4">
-              <div className="grid gap-4 sm:grid-cols-[120px_1fr] sm:items-center">
-                <div className="relative h-36 overflow-hidden rounded-[24px] border border-white/10 sm:h-40">
-                  <Image
-                    src="/rick/rick-portrait-garden.jpg"
-                    alt="Rick Broider portrait"
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 640px) 120px, 100vw"
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">
-                    Live guidance. Clear diagnosis. Rebuild support. Real movement.
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">
-                    Strategic diagnosis, human-centered tech guidance, and practical rebuilding with Rick in the room.
-                  </p>
-                </div>
-              </div>
-            </GlassCard>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">
+              Live guidance. Clear diagnosis. Rebuild support. Real movement.
+            </p>
           </div>
 
-          <PatternDiagnostic />
+          <GlassCard className="overflow-hidden p-3 sm:p-4">
+            <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black/20">
+              <Image
+                src="/images/quicklaunch-hero.png"
+                alt="QuickLaunch regenerative systems hero graphic showing purpose, validation, and execution paths"
+                width={1024}
+                height={1536}
+                className="h-auto w-full object-cover"
+                priority
+              />
+            </div>
+          </GlassCard>
         </div>
       </section>
 
