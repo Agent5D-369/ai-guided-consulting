@@ -121,22 +121,22 @@ export default function HomePage() {
     <>
       <StructuredData data={[personSchema(), professionalServiceSchema(), faqSchema(homepageFaqs)]} />
 
-      <section className="section-space overflow-hidden">
-        <div className="container-shell grid gap-10 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
-          <div className="space-y-7">
+      <section className="overflow-hidden py-12 sm:py-16 lg:py-14">
+        <div className="container-shell grid gap-8 lg:min-h-[calc(100vh-9rem)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+          <div className="space-y-6">
             <SectionLabel>Clarity to Prosperity</SectionLabel>
-            <div className="space-y-6">
-              <h1 className="max-w-[12ch] font-heading text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-[4.5rem] lg:leading-[0.94]">
+            <div className="space-y-5">
+              <h1 className="max-w-[11ch] font-heading text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-[3.95rem] lg:leading-[0.93] xl:text-[4.35rem]">
                 Your vision is not broken.
                 <br />
                 Your business architecture is.
               </h1>
-              <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+              <p className="max-w-copy text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
                 Rick Broider helps founders, visionaries, consultants, and small business owners rebuild the structure beneath the mission, live, with you, so your business can finally support the clarity, clients, systems, website, and prosperity it was meant to carry.
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <CTAButton href={BOOKING_URL} label="Book Your Rebuild Call" external />
               <CTAButton
                 href="/the-7-structural-gaps-behind-project-collapse"
@@ -160,14 +160,14 @@ export default function HomePage() {
             </p>
           </div>
 
-          <GlassCard className="overflow-hidden p-3 sm:p-4">
+          <GlassCard className="mx-auto w-full max-w-[620px] overflow-hidden p-3 sm:p-4 lg:ml-auto">
             <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black/20">
               <Image
                 src="/images/quicklaunch-hero.png"
                 alt="QuickLaunch regenerative systems hero graphic showing purpose, validation, and execution paths"
                 width={1024}
                 height={1536}
-                className="h-auto w-full object-cover"
+                className="h-auto max-h-[68vh] w-full object-contain lg:max-h-[72vh]"
                 priority
               />
             </div>
