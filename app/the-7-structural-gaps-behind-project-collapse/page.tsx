@@ -3,8 +3,9 @@ import Image from "next/image";
 import CTAButton from "@/components/CTAButton";
 import GlassCard from "@/components/GlassCard";
 import SectionLabel from "@/components/SectionLabel";
+import SharePrompt from "@/components/SharePrompt";
 import { StructuredData } from "@/components/StructuredData";
-import { structuralGaps } from "@/lib/content";
+import { sharePrompt, structuralGaps } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
 import { BOOKING_URL, SITE_URL } from "@/lib/site";
 
@@ -37,14 +38,14 @@ export default function StructuralGapsArticlePage() {
         }}
       />
 
-      <section className="section-space">
+      <section id="forward-and-compare" className="section-space">
         <div className="container-shell max-w-5xl space-y-6">
           <SectionLabel>Diagnostic Article</SectionLabel>
           <h1 className="font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
             The 7 Structural Gaps Behind Project Collapse
           </h1>
           <p className="max-w-copy text-base leading-8 text-slate-200 sm:text-xl">
-            Projects and businesses usually collapse structurally, not just tactically. The surface problem may look like execution, conflict, technology, leadership, money, or morale. Underneath that, there is often a deeper pattern the system has not named yet.
+            Most projects and businesses do not collapse because people stop caring. They collapse because structural gaps quietly distort decisions, communication, ownership, timing, and trust.
           </p>
           <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
             Once the pattern is seen clearly, the emotional charge drops, the fog begins to lift, and the repair path gets more honest. This page is built to help founders, partners, and teams recognize the hidden architecture behind the stall.
@@ -63,12 +64,31 @@ export default function StructuralGapsArticlePage() {
               className="h-full w-full object-cover"
             />
           </GlassCard>
-          <GlassCard className="p-6">
-            <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">Why this frame matters</h2>
-            <p className="mt-4 text-base leading-8 text-slate-300">
-              Tactics can help, but they often fail when the business is trying to solve the wrong layer. Naming the structural gap changes the conversation from blame, panic, or drift into diagnosis, sequence, and repair.
-            </p>
-          </GlassCard>
+          <div className="grid gap-4">
+            <GlassCard className="p-6">
+              <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">Why this frame matters</h2>
+              <p className="mt-4 text-base leading-8 text-slate-300">
+                Tactics can help, but they often fail when the business is trying to solve the wrong layer. Naming the structural gap changes the conversation from blame, panic, or drift into diagnosis, sequence, and repair.
+              </p>
+            </GlassCard>
+            <GlassCard className="p-6">
+              <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">How to use this page</h2>
+              <div className="mt-4 space-y-3">
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-7 text-slate-300 sm:text-base">
+                  Read through the seven patterns.
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-7 text-slate-300 sm:text-base">
+                  Find the one that feels most active.
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-7 text-slate-300 sm:text-base">
+                  Forward it to the other person carrying the same system.
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-7 text-slate-300 sm:text-base">
+                  Ask: &ldquo;Which pattern do you think is most active right now?&rdquo;
+                </div>
+              </div>
+            </GlassCard>
+          </div>
         </div>
       </section>
 
@@ -99,6 +119,12 @@ export default function StructuralGapsArticlePage() {
                     <h3 className="font-heading text-xl font-semibold text-white">What changes when it is seen clearly</h3>
                     <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">{gap.shift}</p>
                   </div>
+                  <div className="rounded-3xl border border-white/10 bg-black/25 p-5">
+                    <h3 className="font-heading text-xl font-semibold text-white">Common mistake</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">
+                      Most people mistake this for a people problem, a motivation problem, or a temporary rough patch. It is usually a structural signal.
+                    </p>
+                  </div>
                 </div>
               </div>
             </GlassCard>
@@ -115,6 +141,9 @@ export default function StructuralGapsArticlePage() {
             <p className="mt-5 max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
               This pattern becomes easier to repair when more than one person can see it. Forward this page to the other person carrying the same system and ask: &ldquo;Which pattern do you think is most active right now?&rdquo;
             </p>
+            <div className="mt-6 max-w-xl">
+              <SharePrompt prompt={sharePrompt} />
+            </div>
           </GlassCard>
         </div>
       </section>
@@ -136,6 +165,10 @@ export default function StructuralGapsArticlePage() {
           </GlassCard>
         </div>
       </section>
+
+      <div className="fixed bottom-20 right-4 z-40 md:hidden">
+        <CTAButton href="#forward-and-compare" label="Forward and Compare" variant="secondary" className="min-h-11 px-4 py-2" />
+      </div>
     </>
   );
 }

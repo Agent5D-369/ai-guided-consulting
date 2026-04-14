@@ -53,10 +53,13 @@ export default function AboutPage() {
           <div className="space-y-6">
             <SectionLabel>About Rick Broider</SectionLabel>
             <h1 className="balanced-copy font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
-              A premium rebuild model for people whose vision has outgrown the old structure.
+              A rebuild partner for visionaries carrying something real.
             </h1>
             <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
-              Rick works live with visionaries who need more than analysis. He brings strategy, structural diagnosis, business architecture, website and app pathway guidance, and AI-assisted implementation together so the rebuild becomes real, not theoretical.
+              Rick Broider works with visionaries, founders, consultants, and small business owners who are carrying something real, but whose business structure is no longer keeping up with the mission.
+            </p>
+            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+              His work blends diagnosis, strategy, website and app pathway guidance, AI-assisted implementation, and live rebuild support so clients do not leave with more theory. They leave with movement.
             </p>
           </div>
 

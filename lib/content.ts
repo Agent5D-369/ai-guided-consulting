@@ -199,12 +199,15 @@ export type ServicePageContent = {
   navTitle: string;
   description: string;
   answer: string;
+  opening: string;
   problem: string;
   visualImage: string;
   visualAlt: string;
   accent: string;
   pullQuote: string;
   editorialLabels: string[];
+  feelsLike: string[];
+  actuallyHappening: string[];
   symptoms: string[];
   whatRickDoes: string[];
   whoItIsFor: string[];
@@ -222,7 +225,9 @@ export const servicePages: Record<string, ServicePageContent> = {
     description:
       "Rick helps businesses rebuild underlying systems, structure, pathways, and digital architecture so growth becomes coherent.",
     answer:
-      "A digital transformation consultant helps you rebuild the operating structure beneath the business so your growth, delivery, offers, and digital pathways finally work together instead of fighting each other.",
+      "If the business feels harder to operate than it should, the issue is usually structural, not motivational. Rick helps founders and small business owners rebuild the systems, pathways, decision architecture, and digital layers beneath the mission so growth becomes coherent again.",
+    opening:
+      "If the business feels harder to operate than it should, the issue is usually structural, not motivational. Rick helps founders and small business owners rebuild the systems, pathways, decision architecture, and digital layers beneath the mission so growth becomes coherent again.",
     problem:
       "Most small businesses do not need more software. They need a cleaner structure, clearer sequencing, and a business model that can support the mission without constant drag.",
     visualImage: "/rick/rick-city-blue.png",
@@ -230,6 +235,17 @@ export const servicePages: Record<string, ServicePageContent> = {
     accent: "from-electric-400/30 via-cyan-300/10 to-transparent",
     pullQuote: "Growth stops feeling coherent when the digital layer keeps evolving without the structure underneath it.",
     editorialLabels: ["Systems clarity", "Offer architecture", "Digital pathway repair"],
+    feelsLike: [
+      "The business has momentum, but the operating reality still feels scattered.",
+      "Growth creates drag instead of capacity.",
+      "The team is busy, but decisions keep looping or stalling.",
+      "Tools, offers, systems, and priorities no longer feel aligned."
+    ],
+    actuallyHappening: [
+      "The business structure has not caught up to the next chapter.",
+      "Decision pathways, ownership, systems, and digital infrastructure are creating hidden friction.",
+      "What feels like stress is often a sequencing problem, not a motivation problem."
+    ],
     symptoms: [
       "Your offers, systems, and delivery model no longer match the level of business you are trying to hold.",
       "The team is working hard, but growth still feels messy, expensive, or reactive.",
@@ -276,14 +292,29 @@ export const servicePages: Record<string, ServicePageContent> = {
     description:
       "This is not just aesthetics. It is about rebuilding clarity, conversion, structure, messaging, and trust.",
     answer:
-      "A website development consultant should help you improve far more than visuals. The real work is clarifying what the site needs to say, how it should convert, and what structure supports trust.",
+      "This is not just about redesigning your site. It is about rebuilding clarity, trust, messaging, and conversion so the website actually supports where the business is going next.",
+    opening:
+      "This is not just about redesigning your site. It is about rebuilding clarity, trust, messaging, and conversion so the website actually supports where the business is going next. Rick Broider helps founders, consultants, coaches, and small business owners turn confusing, outdated, or underperforming websites into clear, strategically aligned assets that support the next chapter of growth.",
     problem:
-      "Many websites fail because they are carrying outdated positioning, unclear pathways, scattered messaging, and design decisions that were never anchored to buyer psychology.",
+      "A weak site does more than look dated. It creates confusion. It slows trust. It makes your offer harder to understand. It weakens conversion. And it often becomes the public face of a business that has already outgrown its old shape.",
     visualImage: "/rick/rick-car-burgundy.png",
     visualAlt: "Rick Broider portrait in a burgundy shirt",
     accent: "from-amber-300/25 via-rose-300/10 to-transparent",
     pullQuote: "A website should lower friction, raise trust, and help the right person feel oriented within seconds.",
     editorialLabels: ["Messaging clarity", "Conversion structure", "Trust by design"],
+    feelsLike: [
+      "The site looks fine but does not convert.",
+      "The message is vague or outdated.",
+      "The business evolved but the site did not.",
+      "People land there and still do not know what you really do.",
+      "The site feels disconnected from the real value of the business.",
+      "You keep meaning to fix it, but the project stays stuck, fuzzy, or half-finished."
+    ],
+    actuallyHappening: [
+      "Most underperforming websites are not failing because of one design issue.",
+      "They are failing because the structure beneath the site is unclear.",
+      "That usually means the positioning, offer hierarchy, user path, messaging, call to action, trust sequence, or the way the business has changed without the site catching up is off."
+    ],
     symptoms: [
       "The site looks acceptable, but it does not create conviction.",
       "You struggle to explain what you do quickly and clearly.",
@@ -330,7 +361,9 @@ export const servicePages: Record<string, ServicePageContent> = {
     description:
       "Clarify scope, user flow, next steps, and what to build before wasting money.",
     answer:
-      "An MVP consultant helps you decide what should exist in version one, what should wait, and how to scope a practical product path before money disappears into the wrong build.",
+      "Before you build an MVP, you need clarity on what should exist, what should wait, and what the user actually needs. Rick helps non-technical founders scope the right first version so they do not burn time and money building the wrong thing.",
+    opening:
+      "Before you build an MVP, you need clarity on what should exist, what should wait, and what the user actually needs. Rick helps non-technical founders scope the right first version so they do not burn time and money building the wrong thing.",
     problem:
       "App ideas often collapse under premature development, vague scope, or technical decisions made before the product logic is mature enough to support them.",
     visualImage: "/rick/rick-selfie-parking.jpg",
@@ -338,6 +371,17 @@ export const servicePages: Record<string, ServicePageContent> = {
     accent: "from-indigo-400/30 via-electric-400/10 to-transparent",
     pullQuote: "Before you build faster, you need the product path to become simpler, safer, and more honest.",
     editorialLabels: ["Scope discipline", "Founder translation", "Build sequence"],
+    feelsLike: [
+      "The idea is real, but the product path still feels foggy.",
+      "You are unsure what belongs in version one.",
+      "Developer questions are showing up before the product logic is ready.",
+      "The budget risk feels higher because the scope is still vague."
+    ],
+    actuallyHappening: [
+      "The product concept has not been translated into a practical build sequence yet.",
+      "Scope, user flow, and decision logic are still carrying too much ambiguity.",
+      "Without that clarity, development gets expensive fast."
+    ],
     symptoms: [
       "You have a strong concept, but no trustworthy sequencing.",
       "Developers are asking questions you are not equipped to answer yet.",
@@ -384,7 +428,9 @@ export const servicePages: Record<string, ServicePageContent> = {
     description:
       "Use AI selectively and strategically where it adds leverage and human-centered value.",
     answer:
-      "An AI consultant for small business should help you decide where AI genuinely improves speed, clarity, or capacity and where it simply adds more noise to an already strained system.",
+      "Most small businesses do not need more AI tools. They need better judgment about where AI creates leverage, where it creates noise, and how to use it without losing clarity or trust.",
+    opening:
+      "Most small businesses do not need more AI tools. They need better judgment about where AI creates leverage, where it creates noise, and how to use it without losing clarity or trust.",
     problem:
       "Many businesses are being pushed toward AI before their offers, workflows, or customer experience are clear enough to benefit from it.",
     visualImage: "/rick/rick-patio-charcoal.png",
@@ -392,6 +438,17 @@ export const servicePages: Record<string, ServicePageContent> = {
     accent: "from-cyan-300/25 via-indigo-400/10 to-transparent",
     pullQuote: "The useful question is not whether AI is available. It is whether it serves clarity, capacity, and human trust.",
     editorialLabels: ["Human-centered AI", "Practical leverage", "Noise reduction"],
+    feelsLike: [
+      "You are hearing about AI everywhere, but the path still feels noisy.",
+      "Experiments create output without stronger decisions.",
+      "You want leverage, but not more complexity.",
+      "You do not want the business to lose trust or voice."
+    ],
+    actuallyHappening: [
+      "The business needs discernment, not more tools.",
+      "AI only helps when the workflow, messaging, and customer experience are clear enough to use it well.",
+      "Without that clarity, AI becomes another layer of distraction."
+    ],
     symptoms: [
       "You are experimenting with AI, but results feel fragmented or underwhelming.",
       "Teams are producing more output without stronger decisions.",
@@ -438,7 +495,9 @@ export const servicePages: Record<string, ServicePageContent> = {
     description:
       "High-level technical guidance without premature overhead.",
     answer:
-      "Fractional CTO guidance for non-technical founders gives you senior technical judgment, sequencing, and architecture support without the cost or complexity of hiring a full-time CTO too early.",
+      "This is for non-technical founders who need senior technical direction without the cost or complexity of hiring a full-time CTO too early.",
+    opening:
+      "This is for non-technical founders who need senior technical direction without the cost or complexity of hiring a full-time CTO too early.",
     problem:
       "Technical decisions become expensive when non-technical founders are asked to scope, evaluate, and sequence product or platform work without a senior translator in the room.",
     visualImage: "/rick/rick-portrait-garden.jpg",
@@ -446,6 +505,17 @@ export const servicePages: Record<string, ServicePageContent> = {
     accent: "from-sky-300/25 via-electric-400/10 to-transparent",
     pullQuote: "Founders need a technical translator they can trust before product complexity starts choosing the roadmap for them.",
     editorialLabels: ["Senior guidance", "Architecture judgment", "Founder-side support"],
+    feelsLike: [
+      "Technical conversations feel opaque or hard to evaluate.",
+      "Vendors or developers are effectively defining the roadmap.",
+      "You need senior judgment, but not a full executive hire yet.",
+      "Build decisions feel expensive because sequencing is unclear."
+    ],
+    actuallyHappening: [
+      "The business needs founder-side technical judgment before product complexity compounds.",
+      "Architecture, sequencing, and tradeoffs are being decided without enough trusted translation.",
+      "That raises both cost and risk."
+    ],
     symptoms: [
       "You are relying on vendors or developers to define the roadmap for you.",
       "You cannot easily tell which build decisions matter now versus later.",

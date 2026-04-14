@@ -14,8 +14,7 @@ import {
   homepageFaqs,
   homepageServiceCards,
   painStatements,
-  sharePrompt,
-  structuralGaps
+  sharePrompt
 } from "@/lib/content";
 import { buildMetadata, faqSchema, personSchema, professionalServiceSchema } from "@/lib/seo";
 import { BOOKING_URL } from "@/lib/site";
@@ -32,6 +31,54 @@ const supportChips = [
   "Website rebuilds and conversion pathways",
   "MVP and app direction for non-technical founders",
   "AI-guided, human-centered implementation"
+] as const;
+
+const proofItems = [
+  "Live strategy + implementation, not passive advice",
+  "Built for non-technical founders and mission-led businesses",
+  "Websites, offers, systems, app paths, and business structure",
+  "Clarity first. Rebuild second. Momentum next."
+] as const;
+
+const bestFit = [
+  "You have a real business, mission, offer, or serious next chapter.",
+  "You know something beneath the surface is off.",
+  "You want clarity, structure, and live guidance.",
+  "You are willing to make decisions and rebuild intentionally."
+] as const;
+
+const notFit = [
+  "You want generic motivation.",
+  "You want free consulting with no intention to act.",
+  "You want someone to magically fix everything without your involvement."
+] as const;
+
+const offerPath = [
+  {
+    title: "See the pattern",
+    body:
+      "Start with The 7 Structural Gaps Behind Project Collapse and identify what is actually breaking trust, momentum, or coherence inside the business."
+  },
+  {
+    title: "Get clarity",
+    body:
+      "Book a Rebuild Call and identify the real bottleneck, the real priority, and the clearest next move."
+  },
+  {
+    title: "Rebuild the right layer",
+    body:
+      "Step into a Clarity to Prosperity Session and work through the actual rebuild live, whether that is your offer, website, systems, messaging, app path, or overall business architecture."
+  },
+  {
+    title: "Accelerate the transformation",
+    body:
+      "Use a Live Rebuild Intensive when you need serious progress, cleaner decisions, and real movement now."
+  },
+  {
+    title: "Build long-term strength",
+    body:
+      "Apply for a Regenerative Growth Partnership if you want an ongoing rebuild partner as the business evolves."
+  }
 ] as const;
 
 const outcomeCards = [
@@ -76,7 +123,7 @@ export default function HomePage() {
       <StructuredData data={[personSchema(), professionalServiceSchema(), faqSchema(homepageFaqs)]} />
 
       <section className="section-space overflow-hidden">
-        <div className="container-shell grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+        <div className="container-shell grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
           <div className="space-y-8">
             <SectionLabel>Clarity to Prosperity</SectionLabel>
             <div className="space-y-6">
@@ -86,7 +133,7 @@ export default function HomePage() {
                 Your business architecture is.
               </h1>
               <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
-                Rick Broider is a digital transformation consultant for dreamers, builders, and business owners who need more than advice. He helps you build, rebuild, or regenerate the structure beneath the mission live with you so the business can finally carry the clarity, clients, systems, website, and prosperity you know it is meant for.
+                Rick Broider helps founders, visionaries, consultants, and small business owners rebuild the structure beneath the mission, live, with you, so your business can finally support the clarity, clients, systems, website, and prosperity it was meant to carry.
               </p>
             </div>
 
@@ -110,20 +157,22 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <GlassCard className="p-4 sm:p-5">
-              <div className="flex items-center gap-4">
-                <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-white/10">
+            <GlassCard className="overflow-hidden p-4">
+              <div className="grid gap-4 sm:grid-cols-[120px_1fr] sm:items-center">
+                <div className="relative h-36 overflow-hidden rounded-[24px] border border-white/10 sm:h-40">
                   <Image
                     src="/rick/rick-portrait-garden.jpg"
                     alt="Rick Broider portrait"
                     fill
                     className="object-cover"
-                    sizes="64px"
+                    sizes="(min-width: 640px) 120px, 100vw"
                   />
                 </div>
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">Live with you</p>
-                  <p className="mt-1 text-sm leading-7 text-slate-300 sm:text-base">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">
+                    Live guidance. Clear diagnosis. Rebuild support. Real movement.
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">
                     Strategic diagnosis, human-centered tech guidance, and practical rebuilding with Rick in the room.
                   </p>
                 </div>
@@ -137,10 +186,73 @@ export default function HomePage() {
 
       <section className="section-space pt-0">
         <div className="container-shell">
-          <div className="mb-8 max-w-copy space-y-4">
-            <SectionLabel>The Weight You Feel</SectionLabel>
+          <GlassCard className="p-6 sm:p-8">
+            <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="space-y-4">
+                <SectionLabel>Why serious builders hire Rick</SectionLabel>
+                <h2 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                  Why this lands with the right people
+                </h2>
+                <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+                  Because it names the problem more accurately than they have been able to name it themselves. And once the pattern is visible, the next move becomes easier to trust.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {proofItems.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm leading-7 text-slate-200 sm:text-base"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </GlassCard>
+        </div>
+      </section>
+
+      <section className="section-space pt-0">
+        <div className="container-shell grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <div className="space-y-5">
+            <SectionLabel>Fit</SectionLabel>
             <h2 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-              The business can look functional and still be structurally misaligned.
+              This is for people carrying something real.
+            </h2>
+            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+              You are a fit for this work if the vision is strong, but the structure underneath it feels scattered, stalled, outdated, misaligned, or heavier than it should.
+            </p>
+            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+              You know there is real value in what you are building. You are just tired of trying to force it through a business model, website, offer, system, or pathway that no longer matches the future you are trying to create.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <GlassCard className="p-6">
+              <h3 className="font-heading text-2xl font-semibold tracking-tight text-white">Best fit</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300 sm:text-base">
+                {bestFit.map((item) => (
+                  <li key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </GlassCard>
+            <GlassCard className="p-6">
+              <h3 className="font-heading text-2xl font-semibold tracking-tight text-white">Not a fit</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300 sm:text-base">
+                {notFit.map((item) => (
+                  <li key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </GlassCard>
+          </div>
+        </div>
+        <div className="container-shell mt-10">
+          <div className="mb-8 max-w-copy space-y-4">
+            <h2 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+              If any of this feels familiar, you are exactly who this is for.
             </h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -156,12 +268,39 @@ export default function HomePage() {
       <section className="section-space border-y border-white/8 bg-white/[0.02]">
         <div className="container-shell">
           <div className="max-w-3xl space-y-5">
-            <SectionLabel>Services</SectionLabel>
+            <SectionLabel>Offer Path</SectionLabel>
             <h2 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-              Strategic clarity, website rebuilds, app direction, and live implementation in one system.
+              Start with diagnosis. Then rebuild what matters.
             </h2>
             <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
-              This is where consulting becomes useful. Instead of hiring one person for strategy, another for tech, and another to explain what went wrong, Rick helps you diagnose the structural issue and rebuild the right layer live, with the right sequence, for the right stage of business.
+              The goal is not to drown you in options. The goal is to help you take the right next step in the right order.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {offerPath.map((step, index) => (
+              <GlassCard key={step.title} className="p-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">
+                  Path {index + 1}
+                </p>
+                <h3 className="mt-3 font-heading text-2xl font-semibold tracking-tight text-white">{step.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">{step.body}</p>
+              </GlassCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space">
+        <div className="container-shell">
+          <div className="max-w-3xl space-y-5">
+            <SectionLabel>Services</SectionLabel>
+            <h2 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+              You do not need five disconnected experts.
+              <br />
+              You need the right diagnosis, the right sequence, and the right rebuild.
+            </h2>
+            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+              Rick helps you identify the structural issue and rebuild the right layer, offer, website, app path, systems, or business architecture, in a way that actually moves the business forward.
             </p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -172,7 +311,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space">
+      <section className="section-space border-y border-white/8 bg-white/[0.02]">
         <div className="container-shell grid gap-8 lg:grid-cols-[1fr_0.86fr] lg:items-center">
           <div className="space-y-5">
             <SectionLabel>Diagnostic</SectionLabel>
@@ -180,7 +319,10 @@ export default function HomePage() {
               The 7 Structural Gaps Behind Project Collapse
             </h2>
             <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
-              This is the idea that stops the dream target in their tracks. It does not feel like content marketing. It feels like recognition. It gives language to the unspoken pattern so the reader can finally say, &ldquo;That is exactly what has been happening.&rdquo;
+              Most businesses do not break because people stop caring. They break because the structure underneath the mission starts failing in ways nobody can clearly name.
+            </p>
+            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+              This framework gives language to the unspoken pattern so the right person can finally say, &ldquo;That is exactly what has been happening.&rdquo;
             </p>
 
             <SharePrompt prompt={sharePrompt} />
@@ -190,7 +332,7 @@ export default function HomePage() {
                 label="See the 7 Structural Gaps"
                 variant="secondary"
               />
-              <CTAButton href={BOOKING_URL} label="Book the repair call" external />
+              <CTAButton href={BOOKING_URL} label="Book the Repair Call" external />
             </div>
           </div>
 
@@ -207,10 +349,10 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="font-heading text-2xl font-semibold tracking-tight text-white">
-                  Why this becomes viral among the right people
+                  Why this lands so hard with the right people
                 </h3>
                 <p className="mt-3 text-base leading-8 text-slate-300">
-                  Diagnostics spread because they make people look perceptive, reduce confusion, and start conversations that need to happen. One person sees the pattern. The next move is to forward it to the co-founder, operator, partner, or team member carrying the same tension.
+                  Because it names the problem more accurately than they have been able to name it themselves. And once the pattern is visible, the next move becomes easier to trust.
                 </p>
               </div>
               <ul className="space-y-3 text-sm text-slate-200 sm:text-base">
@@ -224,7 +366,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space border-y border-white/8 bg-white/[0.02]">
+      <section className="section-space">
         <div className="container-shell grid gap-10 lg:grid-cols-[1.04fr_0.96fr]">
           <div className="space-y-5">
             <SectionLabel>Transformation</SectionLabel>
@@ -254,7 +396,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space">
+      <section className="section-space border-y border-white/8 bg-white/[0.02]">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
           <div className="space-y-5">
             <SectionLabel>Process</SectionLabel>
@@ -291,7 +433,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space border-y border-white/8 bg-white/[0.02]">
+      <section className="section-space">
         <div className="container-shell grid gap-4 lg:grid-cols-2">
           <GlassCard className="p-7">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">If nothing changes</p>
@@ -314,7 +456,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space">
+      <section className="section-space border-y border-white/8 bg-white/[0.02]">
         <div className="container-shell grid gap-10 lg:grid-cols-[1fr_0.88fr] lg:items-center">
           <div className="space-y-5">
             <SectionLabel>About Rick</SectionLabel>
@@ -363,12 +505,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space border-y border-white/8 bg-white/[0.02]">
+      <section className="section-space">
         <div className="container-shell">
           <div className="max-w-3xl space-y-5">
             <SectionLabel>FAQ</SectionLabel>
             <h2 className="font-heading text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-              Questions people ask before the rebuild starts.
+              The questions people need answered before they move.
             </h2>
           </div>
           <div className="mt-10 grid gap-4">
@@ -394,23 +536,18 @@ export default function HomePage() {
                 <CTAButton href={BOOKING_URL} label="Book Your Rebuild Call" external />
               </div>
               <div className="rounded-[28px] border border-white/10 bg-white/5 p-6">
-                <div className="space-y-4">
-                  {structuralGaps.slice(0, 4).map((gap) => (
-                    <div key={gap.id} className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-electric-300">
-                          {gap.id}
-                        </span>
-                        <p className="font-medium text-white">{gap.title}</p>
-                      </div>
-                      <p className="mt-2 text-sm leading-7 text-slate-300">{gap.short}</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">
+                  Start with diagnosis
+                </p>
+                <div className="mt-4 space-y-4">
+                  {offerPath.slice(0, 4).map((step) => (
+                    <div key={step.title} className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                      <p className="font-medium text-white">{step.title}</p>
+                      <p className="mt-2 text-sm leading-7 text-slate-300">{step.body}</p>
                     </div>
                   ))}
-                  <Link
-                    href="/the-7-structural-gaps-behind-project-collapse"
-                    className="inline-flex text-sm font-semibold text-electric-300 transition hover:text-electric-200"
-                  >
-                    See all 7 structural gaps
+                  <Link href="/book" className="inline-flex text-sm font-semibold text-electric-300 transition hover:text-electric-200">
+                    Book Your Rebuild Call
                   </Link>
                 </div>
               </div>

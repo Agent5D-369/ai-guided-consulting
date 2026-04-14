@@ -44,8 +44,7 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
             <h1 className="font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
               {service.title}
             </h1>
-            <p className="max-w-copy text-base leading-8 text-slate-200 sm:text-xl">{service.answer}</p>
-            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">{service.problem}</p>
+            <p className="max-w-copy text-base leading-8 text-slate-200 sm:text-xl">{service.opening}</p>
             <div className="flex flex-wrap gap-3">
               {service.editorialLabels.map((label) => (
                 <span
@@ -96,13 +95,20 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
       <section className="section-space pt-0">
         <div className="container-shell grid gap-4 lg:grid-cols-2">
           <GlassCard className="p-6">
-            <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">Problem</h2>
-            <p className="mt-4 text-base leading-8 text-slate-300">{service.problem}</p>
+            <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">What this usually feels like</h2>
+            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300 sm:text-base">
+              {service.feelsLike.map((item) => (
+                <li key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </GlassCard>
           <GlassCard className="p-6">
-            <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">Symptoms</h2>
+            <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">What is actually happening</h2>
+            <p className="mt-4 text-base leading-8 text-slate-300">{service.problem}</p>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300 sm:text-base">
-              {service.symptoms.map((item) => (
+              {service.actuallyHappening.map((item) => (
                 <li key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
                   {item}
                 </li>
@@ -120,7 +126,7 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
             </ul>
           </GlassCard>
           <GlassCard className="p-6">
-            <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">Who it is for</h2>
+            <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">Best fit for</h2>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300 sm:text-base">
               {service.whoItIsFor.map((item) => (
                 <li key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
@@ -146,6 +152,12 @@ export default function ServicePageTemplate({ service }: ServicePageTemplateProp
                 <p className="text-sm leading-7 text-slate-300 sm:text-base">{item}</p>
               </GlassCard>
             ))}
+          </div>
+          <GlassCard className="mt-8 p-6">
+            <h2 className="font-heading text-2xl font-semibold tracking-tight text-white">Why this is different</h2>
+            <p className="mt-4 text-base leading-8 text-slate-300">
+              Rick does not just diagnose the issue and disappear. He helps you think through the structural problem, sequence the rebuild correctly, and move into practical implementation when needed.
+            </p>
           </div>
         </div>
       </section>

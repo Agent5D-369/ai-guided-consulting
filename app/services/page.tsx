@@ -3,7 +3,7 @@ import Image from "next/image";
 import ServiceCard from "@/components/ServiceCard";
 import GlassCard from "@/components/GlassCard";
 import SectionLabel from "@/components/SectionLabel";
-import { serviceIndexIntro, servicePages } from "@/lib/content";
+import { servicePages } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -25,7 +25,9 @@ export default function ServicesPage() {
             <h1 className="font-heading text-4xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
               How Rick helps rebuild the structure beneath the mission
             </h1>
-            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">{serviceIndexIntro}</p>
+            <p className="max-w-copy text-base leading-8 text-slate-300 sm:text-lg">
+              Different businesses break in different layers. Sometimes the issue is your website. Sometimes it is your offer, systems, app path, or business architecture. These services are designed to help you identify the right layer and rebuild it intelligently.
+            </p>
             <GlassCard className="p-5">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-electric-300">Editorial view</p>
               <p className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">
@@ -65,6 +67,30 @@ export default function ServicesPage() {
       </section>
 
       <section className="section-space pt-0">
+        <div className="container-shell mb-10">
+          <GlassCard className="p-6 sm:p-7">
+            <h2 className="font-heading text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              Choose the path that matches the real bottleneck
+            </h2>
+            <div className="mt-6 grid gap-3 md:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm leading-7 text-slate-300 sm:text-base">
+                If the business feels scattered or structurally strained, start with Digital Transformation Consulting
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm leading-7 text-slate-300 sm:text-base">
+                If the site no longer matches the business, start with Website Development Consulting
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm leading-7 text-slate-300 sm:text-base">
+                If the product idea is still foggy, start with MVP Consulting
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm leading-7 text-slate-300 sm:text-base">
+                If you need help using AI without drowning in noise, start with AI Consulting for Small Business
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm leading-7 text-slate-300 sm:text-base md:col-span-2">
+                If you need strategic technical direction, start with Fractional CTO Guidance
+              </div>
+            </div>
+          </GlassCard>
+        </div>
         <div className="container-shell grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => (
             <ServiceCard
