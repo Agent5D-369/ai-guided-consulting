@@ -1,0 +1,14 @@
+Rick Broider website
+Strategy, copy, design, front-end build, scorecard logic, and packaging created in this workspace.
+
+Focus:
+- Mobile-first performance
+- Search clarity
+- LLM discoverability
+- Human-centered conversion writing
+
+Replace before launch:
+- Booking link
+- Contact email
+- Domain references
+- Founder headshot if available

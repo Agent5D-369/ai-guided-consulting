@@ -1,0 +1,25 @@
+# Rick Broider
+
+Rick Broider helps founders, entrepreneurs, consultants, coaches, and small business owners build, rebuild, or regenerate their business live.
+
+Primary services:
+- Digital transformation consulting
+- Website development consulting
+- MVP consulting
+- Fractional CTO guidance for non-technical founders
+- AI consulting for small business
+
+Primary pages:
+- /index.html
+- /about.html
+- /book.html
+- /services/digital-transformation-consultant.html
+- /services/website-development-consultant.html
+- /services/mvp-consultant.html
+- /services/fractional-cto-for-non-technical-founders.html
+- /services/ai-consultant-for-small-business.html
+- /resources/clarity-to-prosperity-scorecard.html
+- /resources/7-structural-gaps-behind-project-collapse.html
+
+Core promise:
+Help visionaries get from clarity to prosperity with live strategic guidance, AI-assisted support, and hands-on website or app development when needed.

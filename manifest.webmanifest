@@ -1,0 +1,16 @@
+{
+  "name": "Rick Broider",
+  "short_name": "Rick Broider",
+  "description": "Live business rebuild guidance for founders, business owners, and visionaries.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8f1",
+  "theme_color": "#cb5a2c",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

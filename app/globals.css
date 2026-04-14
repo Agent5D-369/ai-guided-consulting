@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-950 text-white antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(20, 146, 255, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(67, 56, 202, 0.14), transparent 24%),
+    radial-gradient(circle at bottom center, rgba(232, 179, 107, 0.08), transparent 24%),
+    linear-gradient(180deg, #06070b 0%, #070b14 34%, #05070d 100%);
+}
+
+::selection {
+  background: rgba(55, 189, 248, 0.28);
+  color: #f8fbff;
+}
+
+a,
+button,
+summary,
+input,
+textarea {
+  @apply outline-none;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  @apply ring-2 ring-electric-300 ring-offset-2 ring-offset-ink-950;
+}
+
+.page-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.page-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black, transparent 84%);
+  opacity: 0.12;
+  z-index: -1;
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-space {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
+.glass-panel {
+  @apply rounded-[28px] border border-white/10 bg-white/5 shadow-card backdrop-blur-xl;
+}
+
+.eyebrow-chip {
+  @apply inline-flex items-center rounded-full border border-electric-300/20 bg-electric-300/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-electric-300;
+}
+
+.balanced-copy {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
