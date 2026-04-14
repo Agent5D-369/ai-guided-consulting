@@ -89,7 +89,7 @@ export function professionalServiceSchema() {
   };
 }
 
-export function faqSchema(faqs: { question: string; answer: string }[]) {
+export function faqSchema(faqs: ReadonlyArray<{ question: string; answer: string }>) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
